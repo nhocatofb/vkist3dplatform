@@ -1,0 +1,4 @@
+nerf-poster, ..\uploads\frame_00210.png, Trong nhà
+nerf-lab25, ..\uploads\0ccbed6cab360e68572798.jpg, Phòng thí nghiệm LTT
+nerf-lab25out, ..\uploads\nacenout.jpg, Viện Nacentech
+nerf-face7310, ..\uploads\C1.jpg, Dữ liệu khuôn mặt

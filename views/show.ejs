@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Images</title>
+    <link rel="stylesheet" href="../stylesheets/style.css"> <!-- Đường dẫn tới file CSS -->
+</head>
+<body>
+    <header>
+        <img src="../images/vkistlogo.png" alt="Logo" class="logo">
+        <div class="headroute">
+            <nav>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">VKIST</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <!-- Phần bên trái hiển thị các kết quả của NeRF -->
+            <div class="section">
+                <div class="section-title">NeRF</div>
+                <div id="nerfGallery" class="image-gallery"></div>
+            </div>
+
+            <!-- Dấu gạch giữa để ngăn cách -->
+            <div class="separator"></div>
+
+            <!-- Phần bên phải hiển thị các kết quả của Photogrammetry -->
+            <div class="section">
+                <div class="section-title">Photogrammetry</div>
+                <div id="photoGallery" class="image-gallery"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IT-VKIST Ứng dụng dựng bối cảnh ba chiều. Bản quyền được bảo vệ.</p>
+    </footer>
+
+    <script src="../javascripts/index.js"></script>
+    <script>
+        function handleImageClick(path) {
+            window.open(`/loading?file=${encodeURIComponent(path)}`, '_blank');
+        }
+
+        // Hàm để đọc dữ liệu từ file và hiển thị ảnh
+        async function loadImages(filePath, galleryId) {
+            const response = await fetch(filePath);
+            const data = await response.text();
+            const lines = data.trim().split('\n');
+            const gallery = document.getElementById(galleryId);
+
+            let row;
+            lines.forEach((line, index) => {
+                const [path, imgPath, name] = line.split(',');
+
+                if (index % 2 === 0) {
+                    row = document.createElement('div');
+                    row.classList.add('image-row');
+                    gallery.appendChild(row);
+                }
+
+                const imageItem = document.createElement('div');
+                imageItem.classList.add('image-item');
+
+                // Tạo nội dung HTML cho mỗi image item
+                imageItem.innerHTML = `
+                    <button>
+                        <img src="${imgPath}" alt="${name}">
+                    </button>
+                    <div class="image-description">${name}</div>
+                `;
+
+                const button = imageItem.querySelector('button');
+                button.addEventListener('click', function() {
+                    handleImageClick(path);
+                });
+
+                row.appendChild(imageItem);
+            });
+        }
+
+        // Tải các kết quả của NeRF và Photogrammetry
+        loadImages('../nerfresults.txt', 'nerfGallery');
+        loadImages('../photoresults.txt', 'photoGallery');
+    </script>
+</body>
+</html>
