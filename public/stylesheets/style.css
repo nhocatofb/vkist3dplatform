@@ -8,7 +8,7 @@
 /* Body */
 body {
   font-family: 'Verdana', sans-serif;
-  background-color: #f1f1f1; /* Màu nền tối */
+  background-color: #ffffff; 
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -37,9 +37,9 @@ header {
 }
 
 .headroute {
+  font-size: 12;
   font-family: 'Verdana', sans-serif;
   font-weight: bold;
-  font-size: 15;
   color: #a10808;
   margin-left: 80px; 
   white-space: nowrap; 
@@ -57,11 +57,11 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  text-decoration:dotted;
 }
 
 /* Container */
