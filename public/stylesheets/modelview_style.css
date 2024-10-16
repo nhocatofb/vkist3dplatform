@@ -1,0 +1,172 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color:rgb(171, 203, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Verdana', sans-serif;
+    font-size: 10px;
+    z-index: 10; /* Đảm bảo header nằm trên các thành phần khác */
+}
+
+.logo {
+    width: auto; 
+    height: 30px; 
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    z-index: 10;
+}
+
+/* Thanh bên phải */
+.info-sidebar {
+    position: fixed;
+    right: 20px;
+    top: 80px; /* Để tránh trùng với header */
+    width: 15vw;  /* Độ rộng của thanh */
+    height: calc(100vh - 160px); /* Chiều cao trừ đi chiều cao của header */
+    background-color: rgba(0, 0, 0, 0.7);  /* Màu nền có độ trong suốt */
+    color: white;  /* Màu chữ */
+    padding: 20px;
+    overflow-y: auto;  /* Kéo xuống khi nội dung quá dài */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);  /* Đổ bóng thanh */
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+}
+
+.info-sidebar-left {
+    position: fixed;
+    left: 20px;  /* Cách viền trái 20px */
+    top: 80px;   /* Cách header 80px */
+    width: 10vw;  /* Độ rộng của thanh */
+    height: calc(100vh - 160px); /* Chiều cao trừ đi khoảng cách từ trên và dưới */
+    background-color: rgba(0, 0, 0, 0.7);  /* Màu nền có độ trong suốt */
+    color: white;  /* Màu chữ */
+    padding: 20px;
+    overflow-y: auto;  /* Kéo xuống khi nội dung quá dài */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);  /* Đổ bóng cho thanh */
+    font-family: Arial, sans-serif;
+    border-radius: 10px;  /* Bo góc tròn cho thanh */
+    overflow: hidden;
+}
+/* Nội dung trong thanh */
+.info-sidebar h2,
+.info-sidebar-left h2 {
+    margin-top: 0;
+}
+
+.info-sidebar-left .location {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-sidebar-left img.thumbnail {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-sidebar-left img:hover {
+    transform: scale(1.1);  /* Phóng to ảnh khi hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);  /* Tạo hiệu ứng đổ bóng */
+}
+
+.info-sidebar-left p {
+    margin-top: 5px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+}
+
+.info-sidebar-left h2 {
+    margin-top: 2px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 18px;
+    color: rgb(217, 192, 53);
+    text-align: center;
+}
+
+.info-sidebar h2 {
+    margin-top: 2px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 18px;
+    color: rgb(217, 192, 53);
+    text-align: center;
+}
+
+.info-sidebar p {
+    margin-top: 5px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+.info-sidebar img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Ảnh thumbnail trong thanh bên phải */
+.right-thumbnail {
+    width: 100%; /* Đặt ảnh chiếm toàn bộ chiều ngang của container */
+    border-radius: 10px; /* Bo góc */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột qua */
+}
+
+.info-sidebar img:hover {
+    transform: scale(0.95);  /* Phóng to ảnh khi hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);  /* Tạo hiệu ứng đổ bóng */
+}
+
+/* Modal hiển thị ảnh phóng to */
+.modal {
+    display: none; /* Ẩn modal khi chưa mở */
+    position: fixed;
+    z-index: 100; /* Hiển thị trên tất cả */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+    height: 100%; /* Chiếm toàn bộ chiều cao màn hình */
+    background-color: rgba(0, 0, 0, 0.9); /* Nền đen trong suốt */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}

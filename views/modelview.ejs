@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Model View</title>
+    <link rel="stylesheet" href="../stylesheets/modelview_style.css">
 </head>
+
 <body>
+    <!-- Header -->
+    <div class="header">
+        <img src="../images/vkistlogo.png" alt="Logo" class="logo">
+        <h1>Viện Khoa học và Công nghệ Việt Nam - Hàn Quốc</h1>
+    </div>
+
+    <div class="info-sidebar-left">
+        <h2>Các địa điểm</h2>
+        <div class="location" onclick="showImages('khuvuc1')">
+            <img src="../images/pantry.JPG" alt="khuvuc1" class="thumbnail">
+            <p>Pantry - IT</p>
+        </div>
+        <div class="location" onclick="showImages('khuvuc2')">
+            <img src="../images/vkist.jpg" alt="khuvuc2" class="thumbnail">
+            <p>Outside</p>
+        </div>
+    </div>
+
+    <div class="info-sidebar">
+        <h2>Ảnh thuộc khu vực</h2>
+        <div id="right-sidebar-content">
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="closeImageModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/PLYLoader.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/TextureLoader.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/objects/Sky.js"></script>
     <script src="../javascripts/modelview.js"></script>
+    <script src="../javascripts/modelview_layout.js"></script>
 </body>
 </html>
