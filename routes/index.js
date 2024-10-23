@@ -21,4 +21,8 @@ router.get('/', function(req, res, next) {
   res.render('upload', { title: 'Show' });
 });
 
+router.get('/mauvat', function(req, res, next) {
+  res.render('mauvat', { title: 'Mau Vat' });
+});
+
 module.exports = router;

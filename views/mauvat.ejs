@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mẫu vật vườn Quốc Gia Cát Bà</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .no-data {
+            text-align: center;
+            padding: 50px;
+            color: #999;
+        }
+        .search-bar {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mt-4">Mẫu vật vườn Quốc Gia Cát Bà</h2>
+        <div class="search-bar text-center">
+            <input type="text" id="searchInput" class="form-control d-inline-block w-50" placeholder="Search by name">
+            <button class="btn btn-primary ml-2" onclick="search()">🔍</button>
+            <button class="btn btn-secondary ml-2" onclick="reset()">🔄</button>
+            <button class="btn btn-success ml-2" onclick="view3D()">🌐</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Mã mẫu vật</th>
+                        <th>Tên thông thường</th>
+                        <th>Tên khoa học</th>
+                        <th>Mô tả</th>
+                        <th>Xem thêm</th>
+                        <th>Mô hình 3D</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <tr>
+                        <td>MV00001</td>
+                        <td>Hươu</td>
+                        <td>Cervidae</td>
+                        <td>Hươu là loài động vật có vú thuộc họ guốc chẵn. Chúng có thân hình thon gọn, chân dài, bộ lông màu nâu, xám hoặc trắng. Đặc điểm nổi bật nhất của hươu là cặp gạc, chỉ xuất hiện ở con đực (ngoại trừ loài hươu sao nơi cả con cái cũng có). Gạc của hươu rụng đi và mọc lại mỗi năm. Hươu là loài ăn cỏ, lá cây, và sống chủ yếu ở rừng hoặc đồng cỏ.</td>
+                        <td><a href="https://nerf-hp01.vkist-hub.com/" target="_blank">Xem thêm</a></td>
+                        <td><a href="https://nerf-hp01.vkist-hub.com/" target="_blank">Mô hình 3D</a></td>
+                    </tr>
+                    <tr>
+                        <td>MV00002</td>
+                        <td>Bướm</td>
+                        <td>Lepidoptera</td>
+                        <td>Bướm là loài côn trùng có cánh lớn và màu sắc sặc sỡ, với đôi cánh phủ vẩy nhỏ li ti. Chúng trải qua chu kỳ biến thái hoàn toàn với bốn giai đoạn: trứng, sâu bướm, nhộng và bướm trưởng thành. Bướm chủ yếu sống bằng việc hút mật hoa và đóng vai trò quan trọng trong việc thụ phấn cho các loài thực vật. Chúng phân bố khắp thế giới, thường thấy ở các vùng nhiệt đới và ôn đới.</td>
+                        <td><a href="https://nerf-hp01.vkist-hub.com/" target="_blank">Xem thêm</a></td>
+                        <td><a href="https://nerf-hp01.vkist-hub.com/" target="_blank">Mô hình 3D</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function search() {
+            // Implement search functionality here
+            alert("Search clicked");
+        }
+
+        function reset() {
+            // Implement reset functionality here
+            alert("Reset clicked");
+        }
+
+        function view3D() {
+            window.location.href = "https://3d.vkist-hub.com/loading?file=vkist-quad-refined";
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
