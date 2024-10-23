@@ -3,7 +3,7 @@ scene.background = new THREE.Color(0x888888);
 var light = new THREE.PointLight(0xffffff, 0.2); 
 light.position.set(-5, 10, 20);
 light.castShadow = true;
-scene.add(light);
+//scene.add(light);
 
 scene.fog = new THREE.Fog(0xaaaaaa, 10, 50);
 
@@ -28,7 +28,7 @@ scene.add(sun_light);
 */
 
 var loader = new THREE.TextureLoader();
-loader.load('../images/vkistt.jpg', function(texture) {
+loader.load('../images/catba.jpg', function(texture) {
     scene.background = texture;
 });
 
@@ -37,8 +37,8 @@ scene.add(ambientLight);
 
 
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 10;
-camera.position.y = 1;
+camera.position.z = 15;
+camera.position.y = 5;
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
         objLoader.load('../models/' + fileParam + '/' + fileParam + '.obj', function(object) {
             scene.add(object);
             vkist = object;
-            vkist.rotation.z -= 0.02;
+            vkist.rotation.z -= 0;
+            vkist.rotation.y -= 3.14/2;
+            vkist.position.y -= 2;
         });
     });
 });
@@ -215,14 +217,14 @@ function onMouseClick(event) {
 
 function showEdges(dot) {
     if (dot === dot1) {
-        createEdge(dot1.position, new THREE.Vector3(-5, 3, -2), 'l', 2, '../images/pantry.JPG', 'https://nerf-pantry.vkist-hub.com/');
+        createEdge(dot1.position, new THREE.Vector3(-5, 4, 1), 'l', 2, '../images/xyz.jpg', 'https://nerf-hp01.vkist-hub.com/');
     } else if (dot === dot2) {
-        createEdge(dot2.position, new THREE.Vector3(4, 4, 0), 'r', 2, '../images/pantry.JPG', 'https://nerf-pantry.vkist-hub.com/');
+        createEdge(dot2.position, new THREE.Vector3(4, 7, 0), 'r', 2, '../images/xyz.jpg', 'https://nerf-hp01.vkist-hub.com/');
     }
 }
 
-dot1 = createCustomDot(-2, 2, 0);
-dot2 = createCustomDot(1.4, 1, -0.4);
+dot1 = createCustomDot(-2, 0, 1);
+dot2 = createCustomDot(1.4, 3, -0.4);
 
 function animate() {
     requestAnimationFrame(animate);
