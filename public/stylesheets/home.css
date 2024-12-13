@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ffffff;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+header .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+header .nav-links li {
+    margin: 0 1rem;
+}
+
+header .nav-links a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero {
+    text-align: center;
+    background-color: #16a085;
+    color: white;
+    padding: 10rem 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero .buttons a {
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    color: #16a085;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.feature {
+    padding: 1rem;
+    background-color: #16a085;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.feature i {
+    font-size: 2rem;
+}
+
+.about {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
